@@ -118,11 +118,11 @@ Allowed direct edges (checked by `scripts/check-boundary.sh`; dev-dependencies a
 | `accountd` | `porter-core`, `porter-match`, `porter-capability`, `porter-sheet`, `porter-wire`, `porter-ids`, `porter-daemon`, `porter-callers` (feature `file`: `ProcRoot`, the choice of the `/proc` it reads callers from, and the caller table), `porter-dbus`, `porter-families` (feature `set`: the provider files and which family serves each), `porter-family-oauth` (`ClientFiles`), `porter-fs`, `porter-provider`, `porter-proxy` (feature `tls`: the relay of `Grants1.OpenAuthenticated`), `porter-secrets` (namespace `porter.accountd`, `keysel`, `sealed_key`), `porter-service`, `porter-service-accounts`, `porter-service-core`, `porter-identities`, `porter-spaces`, `porter-settings`, `porter-sheets` (`BusSheets`, `AppNames`, the Request objects), `porter-store`, `porter-tailscale` (feature `io`: follows Tailscale for the account's state and `org.quire.Tailnet1`), and quire's `ds-settings` (feature `live`, by git rev) for `org.quire.SettingsModule1`: the one porter -> quire edge, accountd alone, never a library crate (check-boundary forbids it everywhere else) |
 
 Cross-repo dependencies are git deps at pinned revs, so a git checkout of porter builds with no
-sibling checkout: quire's `ds-settings` (`https://github.com/PoHsuanLai/quire.git`, rev as quire's pinned block). To
+sibling checkout: quire's `ds-settings` (`https://github.com/Bardo-DE/quire.git`, rev as quire's pinned block). To
 work on them locally, put a git-ignored `.cargo/config.toml` in the porter root (never commit it):
 
 ```toml
-[patch."https://github.com/PoHsuanLai/quire.git"]
+[patch."https://github.com/Bardo-DE/quire.git"]
 ds-settings = { path = "../quire/crates/ds-settings" }
 # plus every ds-* crate that resolves from the same rev, so one copy of each is built
 ```
@@ -205,7 +205,7 @@ reaches `reqwest`, `hyper` and `tokio` (porter-http-reqwest); `tailnet` reaches 
 | credentials, where they are filed | `porter-core::secret`; attributes in `porter-secrets::attributes` |
 | the wire protocol and its framing | `porter-wire` |
 | a Space's id and scope | `porter-core::space` |
-| who acted, labels, effects, the confirmation witness | `prov`, in its own repo (PoHsuanLai/prov) |
+| who acted, labels, effects, the confirmation witness | `prov`, in its own repo (Bardo-DE/prov) |
 | a message between agents (companion, worker, computer-use run, the person; across Spaces too), its thread, kind and typed parts | `prov::message` (there is no other return, result or report type) |
 | the roster's agent reference and a message's address | `prov::agent` |
 | how the `desktop` scope joins a Space's labels | `prov::scope` |
@@ -531,7 +531,7 @@ D-Bus on the desktop). Where each mailo piece lands:
 
 ## Caller identity (peephole)
 
-`porter-callers::ProcCallers` identifies a bus sender with [peephole](https://github.com/PoHsuanLai/peephole)
+`porter-callers::ProcCallers` identifies a bus sender with [peephole](https://github.com/Bardo-DE/peephole)
 (`BusPeers`, by git tag, never by path): the sender's process is held by pidfd, `/proc` and the user
 manager state what it is, and `judge` returns a `Standing`. `standing.rs` turns the standing into a
 `Caller`; `translate.rs` turns porter's table into peephole's.

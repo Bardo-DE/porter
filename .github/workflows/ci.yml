@@ -5,7 +5,7 @@ name: ci
 # Porter's dependency on quire is a git dependency on a private repository, so every
 # job that loads the workspace first points git at GitHub with a token. The token is a repository
 # secret named DEPS_TOKEN (a fine-grained token with read access to
-# PoHsuanLai/quire, contents: read). No secret is written in this file;
+# Bardo-DE/quire, contents: read). No secret is written in this file;
 # without the secret the jobs fail at the first fetch. Whether that repository is private is
 # not checked here: if they are public, the step is harmless.
 on:

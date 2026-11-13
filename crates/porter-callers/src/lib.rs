@@ -1,6 +1,6 @@
 //! Who is calling: a bus connection's unique name to a [`Caller`] (an app and a role), for the
 //! daemons (porter PLAN §2.1). The process behind the connection is held and judged by
-//! [peephole](https://github.com/PoHsuanLai/peephole) (`BusPeers`): the bus names the process (a
+//! [peephole](https://github.com/Bardo-DE/peephole) (`BusPeers`): the bus names the process (a
 //! pidfd), `/proc/<pid>` and the systemd manager state what it is, and the judgement is one of
 //! four standings, which [`ProcCallers`] turns into a [`Caller`]:
 //!
