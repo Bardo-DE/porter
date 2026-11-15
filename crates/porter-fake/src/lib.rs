@@ -1,4 +1,4 @@
-//! Test-only fakes (a dev crate, CONVENTIONS §3): providers declared by real provider files,
+//! Test-only fakes (a dev crate): providers declared by real provider files,
 //! three accounts (Storage, Mail, a local Llm), scripted sheets, a fixed clock, an in-memory
 //! registry store and audit log, the `FakeServer` seam the network fakes implement, and a
 //! ready-made service over them. The fake model and session are `porter_infer::testing`. Nothing

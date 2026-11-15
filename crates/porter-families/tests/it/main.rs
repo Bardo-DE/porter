@@ -1,4 +1,4 @@
-//! The crate's integration tests: one executable, one module per topic (CONVENTIONS.md, Tests).
+//! The crate's integration tests: one executable, one module per topic.
 //! A module that needs a family's feature carries it here or in its own `#![cfg]`.
 
 mod acceptance;

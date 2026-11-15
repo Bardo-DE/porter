@@ -1,4 +1,4 @@
-//! Test-only utilities that know nothing of porter (a dev crate, CONVENTIONS §3): a scratch
+//! Test-only utilities that know nothing of porter (a dev crate): a scratch
 //! directory that removes itself, the one deadline tests wait with, and the include guard of a
 //! crate's `tests/it` binary. Every crate of this workspace may take it as a dev dependency
 //! without a cycle, because it depends on nothing of ours. The fakes that do know porter's types

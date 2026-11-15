@@ -1,4 +1,4 @@
-# CONVENTIONS.md section 4: nothing ambient below the daemons. The clock, the filesystem and the
+# Nothing ambient below the daemons. The clock, the filesystem and the
 # monotonic clock are passed in (`porter_ids::clock::{Clock, Monotonic}`, `porter-fs`); only
 # accountd, porter-daemon and porter-fs read them. A crate with this file reads none of them.
 disallowed-methods = [

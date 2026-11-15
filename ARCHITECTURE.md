@@ -429,8 +429,8 @@ done.
 ## 7. Test harness
 
 > A test path below written `tests/<name>.rs` (or `tests/common/...`) means `tests/it/<name>.rs`:
-> a crate's integration tests are modules of one executable, `tests/it/main.rs` (CONVENTIONS.md,
-> item 5). The exceptions are the separate targets named there, each with its reason in `Cargo.toml`.
+> a crate's integration tests are modules of one executable, `tests/it/main.rs`.
+> The exceptions are the separate targets named there, each with its reason in `Cargo.toml`.
 
 `porter-fake` is the harness: `fake_service(ScriptedSheets::answering([...]))` builds an
 `AccountService` over the three fake providers (declared by `crates/porter-fake/providers/*.toml`),
